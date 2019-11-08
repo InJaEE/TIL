@@ -151,3 +151,44 @@ var day = ["월", "화", "수", "목", "금", "토", "일"];
 console.log(day.sort(compStringReverse)); // [ '화', '토', '일', '월', '수', '목', '금' ]
 
 ```
+
+### find
+- arr.find((v)=>{ return v[0]==="값"});
+- 2차원 배열 이상일때 쓰인다.
+- 반복문이지만 원하는것을 찾으면 멈춘다.(return값이 true일때)
+- 반환값은 찾은 밸류
+```js
+var obj = {
+    "이름" : "백인재",
+    "나이" : 27,
+    "주소" : "서울시 송파구",
+}
+
+Object.entries(obj).find((v)=>{
+    console.log(v);
+    return v[0] === '나이';
+});
+/*  
+[ '이름', '백인재' ]
+[ '나이', 27 ]
+객체 obj를 배열로 만들고 배열을 반복하여 인덱스 0의 밸류가 '나이'인것을 찾으면 멈춘다.
+ */
+ ```
+
+ ### findIndex
+ - arr.findIndex((v)=>{ return v[0] === "값" })
+ - 2차원 배열 이상일때 쓰인다.
+ - 반복문이지만 원하는것을 찾으면 멈춘다.(return값이 true일때)
+ - 반환값은 찾은 인덱스
+ ```js
+var obj = {
+    "이름" : "백인재",
+    "나이" : 27,
+    "주소" : "서울시 송파구",
+}
+var result = Object.entries(obj).findIndex((v)=>{
+    return v[0]==="주소";
+});
+
+console.log(result); // 2
+ ```

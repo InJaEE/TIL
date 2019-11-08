@@ -60,3 +60,15 @@ appSample.airplane = function(){
 }
 appSample.airplane();
 ```
+### Object.entries
+- 객체를 배열로 만들어준다.
+```js
+var obj = {
+    "이름" : "백인재",
+    "나이" : 27,
+    "주소" : "서울시 송파구",
+}
+var result = Object.entries(obj);
+
+console.log(result); // [ [ '이름', '백인재' ], [ '나이', 27 ], [ '주소', '서울시 송파구' ] ]
+```
