@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>지뢰찾기</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td{
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" name="" id="hor" placeholder="가로" value="10">
+    <input type="number" name="" id="ver" placeholder="세로" value="10">
+    <input type="number" name="" id="mine" placeholder="지뢰" value="10">
+    <button id="exec">실행</button>
+    <table id="table">
+        <thead>
+            <tr>
+                <td><span id="timer">0초</span></td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="mine.js"></script>
+</body>
+</html>
