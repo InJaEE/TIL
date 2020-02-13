@@ -1,0 +1,23 @@
+{
+  "name": "TDD",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^7.0.1"
+  },
+  "scripts": {
+    "test": "mocha",
+    "test2": "mocha index.spec.js",
+    "start": "node index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
