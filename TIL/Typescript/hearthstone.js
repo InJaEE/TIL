@@ -63,8 +63,10 @@ function createDeck({ mine, count }) {
 function createHero({ mine }) {
     const player = mine ? me : opponent;
     player.heroData = new Hero(mine);
-}
-;
+};
+
+
+
 const ab = {
     add: (a, b) => a + b
 };

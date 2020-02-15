@@ -94,16 +94,51 @@ function initiate(){
     //redrawScreen({mine: false});
 }
 
-function createDeck({mine, count}: {mine: boolean, count: number}){
+initiate();
 
+function createDeck({mine, count}: {mine: boolean, count: number}){
+    const player = mine ? me: opponent;
+    for(let i: number = 0; i<count; i++){
+        player.deckData.push(new Sub(mine));
+    }
 }
 
 function createHero({mine}: {mine: boolean}){
     const player = mine ? me: opponent;
     player.heroData = new Hero(mine);
+    connectCardDom({data: player.heroData, DOM: player.hero, hero: true});
 }
 
+function connectCardDom({data, DOM, hero}: {data: Card, DOM: HTMLDivElement, hero?: Boolean}){
+    const cardEl = document.querySelector('.card-hidden .card')!.cloneNode(true) as HTMLDivElement;
+    cardEl.querySelector('.card-att')!.textContent = String(data.att);
+    cardEl.querySelector('.card-hp')!.textContent = String(data.hp);
+    if(hero){
+        (cardEl.querySelector('.card-cost') as HTMLDivElement).style.display = 'none';
+        const name = document.createElement('div');
+        name.textContent = '영웅';
+        cardEl.appendChild(name);
+    } else{
+        cardEl.querySelector('.card-cost')!.textContent = String(data.cost);
+    }
+    DOM.appendChild(cardEl);
+}
 
+function redrawScreen({mine} = {mine: Boolean}){
+    const Player = mine ? me : opponent;
+    redrawHero(Player);
+}
+
+function redrawHero(target: Player){
+    target.hero.innerHTML = '';
+    connectCardDom({data: target.heroData!, DOM: target.hero, hero: true});
+}
+function redrawDeck(target: Player){
+    target.deck.innerHTML = '';
+    target.deckData.forEach((data) => {
+        connectCardDom({data, DOM: target.deck});
+    });
+}
 
 
 
