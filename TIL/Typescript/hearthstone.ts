@@ -39,6 +39,20 @@ class Sub implements Card{
     }
 }
 
+function isSub(data: Card): data is Sub{
+    if(data.cost){
+        return true;
+    }
+    return false;
+}
+
+function isHero(data: Card): data is Hero{
+    if(data.hero){
+        return true;
+    }
+    return false;
+}
+
 interface Player{
     hero: HTMLDivElement,
     deck: HTMLDivElement,
@@ -121,6 +135,13 @@ function connectCardDom({data, DOM, hero}: {data: Card, DOM: HTMLDivElement, her
     } else{
         cardEl.querySelector('.card-cost')!.textContent = String(data.cost);
     }
+    cardEl.addEventListener('click', () => {
+        if(isSub(data) && data.mine === turn && !data.field){
+            if(!deckToField({data})){
+                createDeck({mine: turn, count: 1})
+            }
+        }
+    });
     DOM.appendChild(cardEl);
 }
 
@@ -139,8 +160,29 @@ function redrawDeck(target: Player){
         connectCardDom({data, DOM: target.deck});
     });
 }
+function redrawField(target: Player){
+    target.field.innerHTML = '';
+    target.fieldData.forEach((data) => {
+        connectCardDom({data, DOM: target.field});
+    });
+}
 
-
+function deckToField({data}: {data: Sub}): boolean{
+    const target = turn ? me : opponent;
+    const currentCost = Number(target.cost.textContent);
+    if(currentCost<data.cost){
+        alert('코스트가 모자릅니다.');
+        return true;
+    }
+    data.field = true;
+    const idx = target.deckData.indexOf(data);
+    target.deckData.splice(idx, 1);
+    target.fieldData.push(data);
+    redrawDeck(target);
+    redrawField(target);
+    target.cost.textContent = String(currentCost - data.cost);
+    return false;
+}
 
 
 
