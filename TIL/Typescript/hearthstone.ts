@@ -1,11 +1,4 @@
-interface Card{
-    att: number;
-    hp: number;
-    mine: boolean;
-    field: boolean;
-    cost?: number;
-    hero?: boolean;
-}
+import { Card, Player } from './types';
 
 // implements는 '구현한다'라고 생각하면 된다.
 // 실제로 사용하면 Class, 구현먼하면 interface(implements)
@@ -53,17 +46,7 @@ function isHero(data: Card): data is Hero{
     return false;
 }
 
-interface Player{
-    hero: HTMLDivElement,
-    deck: HTMLDivElement,
-    field: HTMLDivElement,
-    cost: HTMLDivElement,
-    deckData: Card[],
-    heroData?: Card | null,
-    fieldData: Card[],
-    chosenCard: HTMLDivElement | null,
-    chosenCardData: Card | null,
-}
+
 
 const opponent: Player = {
     hero: document.getElementById('rival-hero') as HTMLDivElement,
@@ -183,6 +166,7 @@ function deckToField({data}: {data: Sub}): boolean{
     target.cost.textContent = String(currentCost - data.cost);
     return false;
 }
+
 
 
 
