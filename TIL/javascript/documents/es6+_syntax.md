@@ -33,6 +33,10 @@ var arrow = function(str){
 
 // ES6
 var arrow = str => str+str;
+var arrow2 = str => (str+str);
+var arrow3 = str => {
+    return str+str;
+};
 ```
 
 <br>
