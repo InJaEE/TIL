@@ -9,6 +9,10 @@
 - 웹 컨텐츠를 효율적으로 제공할 수 있는 서버의 분산 네트워크
 - 정적 컨텐츠(IMG, CSS, JS 등등)을 캐싱한다
 
+### CORS
+- ***Cross Origin Resource Sharing***
+- 도메인이나 포트가 다른 서버의 자원을 요청하는 메커니즘
+
 ### MERN
 - ***MongoDB Express React Nodejs***
 - 위의 네가지 기술 스택을 일컫는 말
