@@ -102,6 +102,7 @@ bin/yona
 ### 에러
 - yum 설치 에러날때
     - No presto metadata available for base => "yum clean metadata" 입력
+- 서버를 다시 실행했을때 사용자 계정을 설정하라고 나왔을시에는 환경변수를 지정했는지 확인
 
 ### 참고 사이트
 - https://zetawiki.com/wiki/CentOS7_MariaDB_%EC%84%A4%EC%B9%98 // MariaDB 설치
