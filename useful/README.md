@@ -11,3 +11,5 @@
 - [Webpack Handbook](https://joshua1988.github.io/webpack-guide/)
 - [Typescript Handbook](https://joshua1988.github.io/webpack-guide/)
 - [ColorTool](https://material.io/resources/color/)
+- [CSS Gradient](https://cssgradient.io/)
+- [Box SHadow CSS Generator](https://www.cssmatic.com/box-shadow)
