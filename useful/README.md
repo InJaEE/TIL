@@ -9,7 +9,7 @@
 - [Emet](https://docs.emmet.io/cheat-sheet/)
 - [Axios 러닝 가이드](https://yamoo9.github.io/axios/)
 - [Webpack Handbook](https://joshua1988.github.io/webpack-guide/)
-- [Typescript Handbook](https://joshua1988.github.io/webpack-guide/)
+- [Typescript Handbook](https://joshua1988.github.io/ts/)
 - [ColorTool](https://material.io/resources/color/)
 - [CSS Gradient](https://cssgradient.io/)
 - [Box SHadow CSS Generator](https://www.cssmatic.com/box-shadow)
