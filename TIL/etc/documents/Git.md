@@ -133,6 +133,11 @@ git stash apply // 돌아가기
 git fetch
 ```
 
+### 빈 폴더 삭제
+```
+git rm -r --cached 
+```
+
 ### git flow 전략
 ```
 각자의 브랜치에서 작업 후 테스트용 브랜치에 merge하고 테스트 후 master에 merge한다.
